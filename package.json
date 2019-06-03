@@ -1,0 +1,15 @@
+{
+  "name": "alarms",
+  "version": "0.0.1",
+  "description": "",
+  "author": "sot528",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [],
+  "devDependencies": {
+    "serverless": "^1.44.1"
+  },
+  "scripts": {
+    "deploy": "yarn sls deploy"
+  }
+}
