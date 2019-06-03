@@ -15,15 +15,6 @@ provider:
   environment:
     SLACK_NOTIFICATION_URL: ${env:SLACK_NOTIFICATION_URL}
     SLACK_CHANNEL: ${env:SLACK_CHANNEL}
-  iamRoleStatements:
-    - Effect: 'Allow'
-      Action:
-        - 'sts:AssumeRole'
-        - 'logs:*'
-        - 'rekognition:DetectModerationLabels'
-        - 's3:Get*'
-        - 's3:List*'
-      Resource: "*"
 
 package:
   individually: true
@@ -39,7 +30,6 @@ package:
     - README.md
 
 functions:
-  # Codepipelineの結果をSlackに飛ばすLambda
   CodepipelineToSlack:
     handler: handlers/codepipeline_to_slack.lambda_handler
     events:
@@ -54,4 +44,3 @@ functions:
                 - CANCELED
                 - FAILED
                 - SUCCEEDED
-                - STARTED

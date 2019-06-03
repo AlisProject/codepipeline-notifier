@@ -1,16 +1,16 @@
-Codepipelineの結果をSlackへ通知。
+Notify AWS Codepipeline status to Slack.
 
-# 準備
+# Prepare
 
 ```bash
 yarn
 
-# 環境変数にSlack周りの値を格納
+# Add Slack information to env valuables via direnv. 
 cp .envrc.sample .envrc
-vi .envrc
+direnv edit
 ```
 
-# デプロイ
+# Deployment
 
 ```bash
 yarn deploy

@@ -1,3 +1,5 @@
+# Thanks to
+# https://qiita.com/ot-nemoto/items/91886f4a18c1b4e80a45#cloudwatch
 import boto3
 import json
 import logging
@@ -47,6 +49,10 @@ def lambda_handler(event, context):
     # 通知内容
     slack_message = {
         'channel': SLACK_CHANNEL,
+        'username': 'CodePipeline',
+        # Please add icon to Slack by your self
+        # https://slack.com/customize/emoji
+        'icon_emoji': ':codepipeline:',
         'text': SLACK＿MESSAGE_TEXT.format(
             pipeline, state, url, STATE_ICONS.get(state, ''),
             execution_id, detail),
